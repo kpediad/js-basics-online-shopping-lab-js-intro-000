@@ -23,7 +23,11 @@ function viewCart() {
   var cartContents = "In your cart, you have "
   for(let i = 0; i < cart.length; i++) {
     if (i === cart.length - 1) {
-      cartContents += `and ${cart[i]['itemName']} at \$${cart[i]['itemPrice']}.`
+      if (cart.length === 1) {
+        cartContents += `${cart[i]['itemName']} at \$${cart[i]['itemPrice']}.`  
+      } else {
+        cartContents += `and ${cart[i]['itemName']} at \$${cart[i]['itemPrice']}.`
+      }
     } else {
       cartContents += `${cart[i]['itemName']} at \$${cart[i]['itemPrice']}, `
     }
